@@ -13,17 +13,17 @@ const numerals = (state, action) => {
   
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
-      let isAvailable = true
+      let isDigitAvailable = true
       if (
         state.guessDigits.length === GUESS_DIGITS_LENGTH 
         || state.guessDigits.includes(action.numeral)
         || (state.guessDigits.length === 0 && action.numeral === 0)
       ) {
-        isAvailable = false
+        isDigitAvailable = false
       }
       return {
-        numericButtons: numericButtons(state.numericButtons, action, isAvailable),
-        guessDigits: guessDigits(state.guessDigits, action)
+        numericButtons: numericButtons(state.numericButtons, action, isDigitAvailable),
+        guessDigits: guessDigits(state.guessDigits, action, isDigitAvailable)
       }
     case CLICK_GUESS_DIGIT:
       return {

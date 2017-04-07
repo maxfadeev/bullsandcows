@@ -1,14 +1,9 @@
 import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT } from '../constants/ActionTypes'
-import { GUESS_DIGITS_LENGTH } from '../constants/Main'
 
-const guessDigits = (state = [], action) => {
+const guessDigits = (state = [], action, isDigitAvailable) => {
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
-      if (
-        state.length < GUESS_DIGITS_LENGTH 
-        && !state.includes(action.numeral)
-        && !(state.length === 0 && action.numeral === 0)
-      ) {
+      if (isDigitAvailable === true) {
         return [
           ...state,
           action.numeral
@@ -16,8 +11,8 @@ const guessDigits = (state = [], action) => {
       }
       return state
     case CLICK_GUESS_DIGIT:
-      return state.filter((n) => {
-        return n !== action.numeral
+      return state.filter((numeral) => {
+        return numeral !== action.numeral
       })
     default:
       return state
