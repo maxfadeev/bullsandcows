@@ -10,25 +10,27 @@ const numerals = (state, action) => {
       guessDigits: guessDigits(undefined, action)
     }
   }
+
+  const isDigitAvailable = !(
+    state.guessDigits.length === GUESS_DIGITS_LENGTH 
+    || state.guessDigits.includes(action.numeral)
+    || (state.guessDigits.length === 0 && action.numeral === 0)
+  )
   
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
-      let isDigitAvailable = true
-      if (
-        state.guessDigits.length === GUESS_DIGITS_LENGTH 
-        || state.guessDigits.includes(action.numeral)
-        || (state.guessDigits.length === 0 && action.numeral === 0)
-      ) {
-        isDigitAvailable = false
-      }
-      return {
-        numericButtons: numericButtons(state.numericButtons, action, isDigitAvailable),
-        guessDigits: guessDigits(state.guessDigits, action, isDigitAvailable)
-      }
     case CLICK_GUESS_DIGIT:
       return {
-        numericButtons: numericButtons(state.numericButtons, action),
-        guessDigits: guessDigits(state.guessDigits, action)
+        numericButtons: numericButtons(
+          state.numericButtons, 
+          action,
+          isDigitAvailable
+        ),
+        guessDigits: guessDigits(
+          state.guessDigits, 
+          action,
+          isDigitAvailable
+        )
       }
     default:
       return state

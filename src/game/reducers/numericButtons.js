@@ -1,7 +1,7 @@
 import { NUMERALS } from '../constants/Main'
 import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT } from '../constants/ActionTypes'
 
-const numericButtons = (state, action, isDigitAvailable) => {
+const numericButtons = (state, action, isDigitAvailable = true) => {
   if (typeof state === 'undefined') {
     return NUMERALS.map((numeral) => {
       return {

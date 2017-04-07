@@ -1,6 +1,6 @@
 import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT } from '../constants/ActionTypes'
 
-const guessDigits = (state = [], action, isDigitAvailable) => {
+const guessDigits = (state = [], action, isDigitAvailable = true) => {
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
       if (isDigitAvailable === true) {
