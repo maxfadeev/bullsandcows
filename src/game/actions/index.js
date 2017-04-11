@@ -11,3 +11,10 @@ export const clickGuessDigit = (numeral) => {
     numeral
   }
 }
+
+export const clickScoreButton = (guessDigits) => {
+  return {
+    type: 'CLICK_SCORE_BUTTON',
+    guessDigits
+  }
+}
