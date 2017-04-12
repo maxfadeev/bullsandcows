@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import Guess from '../components/Guess'
-import { clickGuessDigit } from '../actions'
+import { clickGuessDigit } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {

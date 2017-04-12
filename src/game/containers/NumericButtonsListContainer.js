@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import NumericButtonsList from '../components/NumericButtonsList'
-import { clickNumericButton } from '../actions'
+import { clickNumericButton } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import ScoreButton from '../components/ScoreButton'
-import { clickScoreButton } from '../actions'
+import { clickScoreButton } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {
