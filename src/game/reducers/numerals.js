@@ -22,7 +22,7 @@ const numerals = (state, action) => {
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
     case CLICK_GUESS_DIGIT:
-      return {
+      return Object.assign({}, state, {
         numericButtons: numericButtons(
           state.numericButtons, 
           action,
@@ -32,9 +32,8 @@ const numerals = (state, action) => {
           state.guessDigits, 
           action,
           isDigitAvailable
-        ),
-        scores: state.scores
-      }
+        )
+      })
     case CLICK_SCORE_BUTTON:
       if (state.guessDigits.length === GUESS_DIGITS_LENGTH) {
         return {
