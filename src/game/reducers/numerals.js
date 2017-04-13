@@ -3,14 +3,14 @@ import guessDigits from './guessDigits'
 import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT, CLICK_SCORE_BUTTON } from '../constants/ActionTypes'
 import { GUESS_DIGITS_LENGTH } from '../constants/Main'
 
-const numerals = (state, action) => {
-  if (typeof state === 'undefined') {
-    return {
-      numericButtons: numericButtons(undefined, action),
-      guessDigits: guessDigits(undefined, action)
-    }
-  }
+function getInitialState() {
+  return {
+    numericButtons: numericButtons(undefined, {}),
+    guessDigits: guessDigits(undefined, {})
+  }  
+}
 
+const numerals = (state = getInitialState(), action) => {
   const isDigitAvailable = !(
     state.guessDigits.length === GUESS_DIGITS_LENGTH 
     || state.guessDigits.includes(action.numeral)
@@ -34,10 +34,7 @@ const numerals = (state, action) => {
       }
     case CLICK_SCORE_BUTTON:
       if (action.guessDigits.length === GUESS_DIGITS_LENGTH) {
-        return {
-          numericButtons: numericButtons(undefined, action),
-          guessDigits: guessDigits(undefined, action)
-        }  
+        return getInitialState()  
       }
       return state
     default:
