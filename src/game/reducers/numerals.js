@@ -1,6 +1,5 @@
 import numericButtons from './numericButtons'
 import guessDigits from './guessDigits'
-import scores from './scores'
 import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT, CLICK_SCORE_BUTTON } from '../constants/ActionTypes'
 import { GUESS_DIGITS_LENGTH } from '../constants/Main'
 
@@ -8,8 +7,7 @@ const numerals = (state, action) => {
   if (typeof state === 'undefined') {
     return {
       numericButtons: numericButtons(undefined, action),
-      guessDigits: guessDigits(undefined, action),
-      scores: scores(undefined, action)
+      guessDigits: guessDigits(undefined, action)
     }
   }
 
@@ -22,7 +20,7 @@ const numerals = (state, action) => {
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
     case CLICK_GUESS_DIGIT:
-      return Object.assign({}, state, {
+      return {
         numericButtons: numericButtons(
           state.numericButtons, 
           action,
@@ -33,14 +31,13 @@ const numerals = (state, action) => {
           action,
           isDigitAvailable
         )
-      })
+      }
     case CLICK_SCORE_BUTTON:
-      if (state.guessDigits.length === GUESS_DIGITS_LENGTH) {
+      if (action.guessDigits.length === GUESS_DIGITS_LENGTH) {
         return {
           numericButtons: numericButtons(undefined, action),
-          guessDigits: guessDigits(undefined, action),
-          scores: scores(state.scores, action)
-        }
+          guessDigits: guessDigits(undefined, action)
+        }  
       }
       return state
     default:

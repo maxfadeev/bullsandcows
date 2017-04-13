@@ -4,7 +4,7 @@ import ScoresList from '../components/ScoresList'
 
 const mapStateToProps = (state) => {
   return {
-    scores: state.numerals.scores
+    scores: state.scores
   }
 }
 
