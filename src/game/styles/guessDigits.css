@@ -1,0 +1,11 @@
+#guess-digits {
+  list-style-type: none;
+}
+
+#guess-digits li {
+  float: left;   
+}
+
+#guess-digits li a, #guess-digits li span {
+  padding: 5px;
+}

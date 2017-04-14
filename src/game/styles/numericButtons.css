@@ -1,0 +1,13 @@
+#numeric-buttons {
+  float: left;
+  margin: 0 15px;
+  list-style-type: none;
+}
+
+#numeric-buttons li {
+  float: left;   
+}
+
+#numeric-buttons li a, #numeric-buttons li span {
+  padding: 5px;
+}

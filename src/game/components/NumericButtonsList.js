@@ -1,9 +1,10 @@
 import React from 'react'
 
 import NumericButton from './NumericButton'
+import '../styles/numericButtons.css'
 
 const NumericButtonsList = ({numericButtons, onNumericButtonClick}) => (
-  <ul>
+  <ul id="numeric-buttons">
     {numericButtons.map((button) => 
       <li key={button.numeral}>
         <NumericButton 
