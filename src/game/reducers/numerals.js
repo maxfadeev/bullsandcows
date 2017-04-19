@@ -1,35 +1,58 @@
 import numericButtons from './numericButtons'
 import guessDigits from './guessDigits'
-import { CLICK_NUMERIC_BUTTON, CLICK_GUESS_DIGIT, CLICK_SCORE_BUTTON } from '../constants/ActionTypes'
+import scoreDigits from './scoreDigits'
+import { 
+  CLICK_NUMERIC_BUTTON, 
+  CLICK_GUESS_DIGIT, 
+  CLICK_SCORE_BUTTON, 
+  CLICK_SCORE_DIGIT 
+} from '../constants/ActionTypes'
 import { GUESS_DIGITS_LENGTH } from '../constants/Main'
 
 function getInitialState() {
   return {
     numericButtons: numericButtons(undefined, {}),
-    guessDigits: guessDigits(undefined, {})
+    guessDigits: guessDigits(undefined, {}),
+    scoreDigits: scoreDigits(undefined, {})
   }  
 }
 
 const numerals = (state = getInitialState(), action) => {
-  const isDigitAvailable = !(
+  const isGuessDigitAvailable = !(
     state.guessDigits.length === GUESS_DIGITS_LENGTH 
     || state.guessDigits.includes(action.numeral)
     || (state.guessDigits.length === 0 && action.numeral === 0)
+  )
+  const isScoreDigitAvailable = (
+    isGuessDigitAvailable === false
+    && action.numeral <= GUESS_DIGITS_LENGTH
+    && state.scoreDigits.length < 2
+    && (
+      typeof state.scoreDigits[0] === 'undefined' 
+      || (Number(state.scoreDigits[0]) + Number(action.numeral)) <= GUESS_DIGITS_LENGTH
+    )
   )
   
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
     case CLICK_GUESS_DIGIT:
+    case CLICK_SCORE_DIGIT:
+    console.log(state.scoreDigits)
       return {
         numericButtons: numericButtons(
           state.numericButtons, 
           action,
-          isDigitAvailable
+          isGuessDigitAvailable
         ),
         guessDigits: guessDigits(
           state.guessDigits, 
           action,
-          isDigitAvailable
+          isGuessDigitAvailable
+        ),
+        scoreDigits: scoreDigits(
+          state.scoreDigits,
+          action,
+          isScoreDigitAvailable
         )
       }
     case CLICK_SCORE_BUTTON:
