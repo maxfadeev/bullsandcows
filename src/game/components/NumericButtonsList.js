@@ -9,7 +9,6 @@ const NumericButtonsList = ({numericButtons, onNumericButtonClick}) => (
       <li key={button.numeral}>
         <NumericButton 
           onClick={() => onNumericButtonClick(button.numeral)}
-          choosen={button.choosen}
         >
           {button.numeral}
         </NumericButton>

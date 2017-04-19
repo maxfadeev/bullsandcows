@@ -1,9 +1,6 @@
 import React from 'react'
 
-const NumericButton = ({choosen, onClick, children}) => {
-  if (choosen) {
-    return <span>{children}</span>
-  }
+const NumericButton = ({onClick, children}) => {
   return (
     <a href="#"
       onClick={(e) => {
