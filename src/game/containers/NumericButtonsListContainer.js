@@ -5,14 +5,15 @@ import { clickNumericButton } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {
-    numericButtons: state.numerals.numericButtons
+    numericButtons: state.numerals.numericButtons,
+    isScoreAvailable: state.scores.length > 0
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onNumericButtonClick: (numeral) => {
-      dispatch(clickNumericButton(numeral))
+    onNumericButtonClick: (numeral, isScoreAvailable) => {
+      dispatch(clickNumericButton(numeral, isScoreAvailable))
     }
   }
 }

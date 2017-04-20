@@ -1,7 +1,8 @@
-export const clickNumericButton = (numeral) => {
+export const clickNumericButton = (numeral, isScoreAvailable) => {
   return {
     type: 'CLICK_NUMERIC_BUTTON',
-    numeral
+    numeral,
+    isScoreAvailable
   }
 }
 
@@ -12,9 +13,9 @@ export const clickGuessDigit = (numeral) => {
   }
 }
 
-export const clickScoreButton = (guessDigits) => {
+export const clickScoreDigit = (key) => {
   return {
-    type: 'CLICK_SCORE_BUTTON',
-    guessDigits
+    type: 'CLICK_SCORE_DIGIT',
+    key
   }
 }

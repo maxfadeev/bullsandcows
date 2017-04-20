@@ -1,0 +1,11 @@
+#score-digits {
+  list-style-type: none;
+}
+
+#score-digits li {
+  float: left;   
+}
+
+#score-digits li a, #score-digits li span {
+  padding: 5px;
+}

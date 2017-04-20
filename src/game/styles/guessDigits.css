@@ -1,5 +1,8 @@
 #guess-digits {
   list-style-type: none;
+  float: left;
+  margin: 0 10px;
+  padding: 0;
 }
 
 #guess-digits li {

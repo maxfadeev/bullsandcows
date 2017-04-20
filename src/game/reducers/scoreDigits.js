@@ -3,7 +3,7 @@ import { CLICK_NUMERIC_BUTTON, CLICK_SCORE_DIGIT } from '../constants/ActionType
 const scoreDigits = (state = [], action, isDigitAvailable = true) => {
   switch (action.type) {
     case CLICK_NUMERIC_BUTTON:
-      if (isDigitAvailable === true) {
+      if (isDigitAvailable === true && action.isScoreAvailable === true) {
         return [
           ...state,
           action.numeral
@@ -11,8 +11,8 @@ const scoreDigits = (state = [], action, isDigitAvailable = true) => {
       }
       return state
     case CLICK_SCORE_DIGIT:
-      return state.filter((numeral) => {
-        return numeral !== action.numeral
+      return state.filter((n, key) => {
+        return key !== action.key
       })
     default:
       return state

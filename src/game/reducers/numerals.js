@@ -7,7 +7,7 @@ import {
   CLICK_SCORE_BUTTON, 
   CLICK_SCORE_DIGIT 
 } from '../constants/ActionTypes'
-import { GUESS_DIGITS_LENGTH } from '../constants/Main'
+import { GUESS_DIGITS_LENGTH, SCORE_DIGITS_LENGTH } from '../constants/Main'
 
 function getInitialState() {
   return {
@@ -24,9 +24,9 @@ const numerals = (state = getInitialState(), action) => {
     || (state.guessDigits.length === 0 && action.numeral === 0)
   )
   const isScoreDigitAvailable = (
-    isGuessDigitAvailable === false
+    state.guessDigits.length === GUESS_DIGITS_LENGTH
     && action.numeral <= GUESS_DIGITS_LENGTH
-    && state.scoreDigits.length < 2
+    && state.scoreDigits.length < SCORE_DIGITS_LENGTH
     && (
       typeof state.scoreDigits[0] === 'undefined' 
       || (Number(state.scoreDigits[0]) + Number(action.numeral)) <= GUESS_DIGITS_LENGTH
@@ -37,7 +37,6 @@ const numerals = (state = getInitialState(), action) => {
     case CLICK_NUMERIC_BUTTON:
     case CLICK_GUESS_DIGIT:
     case CLICK_SCORE_DIGIT:
-    console.log(state.scoreDigits)
       return {
         numericButtons: numericButtons(
           state.numericButtons, 

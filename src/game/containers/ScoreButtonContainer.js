@@ -1,18 +1,20 @@
 import { connect } from 'react-redux'
 
 import ScoreButton from '../components/ScoreButton'
-import { clickScoreButton } from '../actions/numerals'
+import { clickScoreButton } from '../actions/scores'
 
 const mapStateToProps = (state) => {
   return {
-    guessDigits: state.numerals.guessDigits
+    guessDigits: state.numerals.guessDigits,
+    scoreDigits: state.numerals.scoreDigits,
+    isScoreAvailable: (state.scores.length > 0)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (guessDigits) => {
-      dispatch(clickScoreButton(guessDigits))
+    onClick: (guessDigits, scoreDigits) => {
+      dispatch(clickScoreButton(guessDigits, scoreDigits))
     }
   };
 };
