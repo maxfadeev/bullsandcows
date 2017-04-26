@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ScoreDigit = ({onClick, children}) => (
+const TypedDigit = ({onClick, children}) => (
   <a href="#"
      onClick={(e) => {
        e.preventDefault()
@@ -11,4 +11,4 @@ const ScoreDigit = ({onClick, children}) => (
   </a>
 )
 
-export default ScoreDigit
+export default TypedDigit

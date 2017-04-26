@@ -1,19 +1,19 @@
 import { connect } from 'react-redux'
 
 import NumericButtonsList from '../components/NumericButtonsList'
-import { clickNumericButton } from '../actions/numerals'
+import { pressNumericButton } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {
-    numericButtons: state.numerals.numericButtons,
-    isScoreAvailable: state.scores.length > 0
+    typedDigits: state.typedDigits,
+    turn: state.turn
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onNumericButtonClick: (numeral, isScoreAvailable) => {
-      dispatch(clickNumericButton(numeral, isScoreAvailable))
+    onNumericButtonPress: (numeral, typedDigits, turn) => {
+      dispatch(pressNumericButton(numeral, typedDigits, turn))
     }
   }
 }

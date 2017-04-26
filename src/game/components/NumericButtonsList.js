@@ -4,17 +4,18 @@ import NumericButton from './NumericButton'
 import '../styles/numericButtons.css'
 
 const NumericButtonsList = ({
-  numericButtons, 
-  isScoreAvailable, 
-  onNumericButtonClick
+  numerals,
+  typedDigits,
+  turn, 
+  onNumericButtonPress
 }) => (
   <ul id="numeric-buttons">
-    {numericButtons.map((button) => 
-      <li key={button.numeral}>
+    {numerals.map((n) => 
+      <li key={n}>
         <NumericButton 
-          onClick={() => onNumericButtonClick(button.numeral, isScoreAvailable)}
+          onClick={() => onNumericButtonPress(n, typedDigits, turn)}
         >
-          {button.numeral}
+          {n}
         </NumericButton>
       </li>
     )}

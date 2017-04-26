@@ -1,14 +1,14 @@
-#guess-digits {
+#typed-digits {
   list-style-type: none;
   float: left;
   margin: 0 10px;
   padding: 0;
 }
 
-#guess-digits li {
+#typed-digits li {
   float: left;   
 }
 
-#guess-digits li a, #guess-digits li span {
+#typed-digits li a, #typed-digits li span {
   padding: 5px;
 }

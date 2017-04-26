@@ -1,13 +1,12 @@
-import { CLICK_SCORE_BUTTON } from '../constants/ActionTypes'
+import { PRESS_SCORE_BUTTON } from '../constants/ActionTypes'
 
 const scores = (state = [], action) => {
   switch (action.type) {
-    case CLICK_SCORE_BUTTON:
+    case PRESS_SCORE_BUTTON:
       return [
         ...state,
         {
-          guessDigits: action.guessDigits,
-          scoreDigits: action.scoreDigits
+          digits: action.typedDigits
         }
       ]
     default:

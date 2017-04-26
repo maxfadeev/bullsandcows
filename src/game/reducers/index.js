@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 
-import numerals from './numerals'
+import typedDigits from './typedDigits'
 import scores from './scores'
+import turn from './turn'
 
 export default combineReducers({
-  numerals,
-  scores
+  typedDigits,
+  scores,
+  turn
 })
