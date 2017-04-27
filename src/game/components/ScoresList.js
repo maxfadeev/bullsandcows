@@ -2,8 +2,8 @@ import React from 'react'
 
 const ScoresList = ({scores}) => (
   <ul>
-    {scores.map((score, key) =>
-      <li key={key}>{score.digits}</li>  
+    {scores.map((digits, key) =>
+      <li key={key}>{digits}</li>  
     )}
   </ul>
 )

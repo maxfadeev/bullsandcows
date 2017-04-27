@@ -5,9 +5,7 @@ const scores = (state = [], action) => {
     case PRESS_SCORE_BUTTON:
       return [
         ...state,
-        {
-          digits: action.typedDigits
-        }
+        action.typedDigits
       ]
     default:
       return state
