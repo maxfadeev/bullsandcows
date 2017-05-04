@@ -1,8 +1,8 @@
-import { APPEND_SCORES } from '../constants/ActionTypes'
+import { APPEND_GUESSES } from '../constants/ActionTypes'
 
-const scores = (state = [], action) => {
+const guesses = (state = [], action) => {
   switch (action.type) {
-    case APPEND_SCORES:
+    case APPEND_GUESSES:
       return [
         ...state,
         {
@@ -15,4 +15,4 @@ const scores = (state = [], action) => {
   }
 }
 
-export default scores
+export default guesses

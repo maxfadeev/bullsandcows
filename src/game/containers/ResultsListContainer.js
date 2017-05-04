@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 
-import ScoresList from '../components/ScoresList'
+import ResultsList from '../components/ResultsList'
 
 const mapStateToProps = (state) => {
   return {
+    guesses: state.guesses,
     scores: state.scores
   }
 }
 
 export default connect(
   mapStateToProps
-)(ScoresList)
+)(ResultsList)

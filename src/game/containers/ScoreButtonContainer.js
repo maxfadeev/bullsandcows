@@ -12,6 +12,7 @@ import {
 const mapStateToProps = (state) => {
   return {
     typedDigits: state.typedDigits,
+    turn: state.turn,
     isScoreButtonAvailable: (      
       (
         state.turn === GUESS_TURN 
@@ -27,8 +28,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (typedDigits) => {
-      dispatch(pressScoreButton(typedDigits))
+    onClick: (typedDigits, turn) => {
+      dispatch(pressScoreButton(typedDigits, turn))
     }
   };
 };

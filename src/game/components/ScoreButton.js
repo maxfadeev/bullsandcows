@@ -1,6 +1,11 @@
 import React from 'react'
 
-const ScoreButton = ({onClick, typedDigits, isScoreButtonAvailable}) => {
+const ScoreButton = ({
+  onClick, 
+  typedDigits, 
+  turn, 
+  isScoreButtonAvailable
+}) => {
   if (isScoreButtonAvailable === false) {
     return <span>Score</span>
   }
@@ -8,7 +13,7 @@ const ScoreButton = ({onClick, typedDigits, isScoreButtonAvailable}) => {
     <a href="#"
       onClick={(e) => {
         e.preventDefault()
-        onClick(typedDigits)
+        onClick(typedDigits, turn)
       }}
     >
       Score

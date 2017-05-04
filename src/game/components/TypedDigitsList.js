@@ -5,8 +5,8 @@ import '../styles/typedDigits.css'
 
 const TypedDigitsList = ({typedDigits, onRemoveTypedDigit}) => (
   <ul id="typed-digits">
-    {typedDigits.map((digit) => 
-      <li key={digit}>
+    {typedDigits.map((digit, key) => 
+      <li key={key}>
         <TypedDigit onClick={() => onRemoveTypedDigit(digit)}>
           {digit}
         </TypedDigit>
