@@ -1,14 +1,13 @@
-import { connect } from 'react-redux'
+import React from 'react'
 
-import ResultsList from '../components/ResultsList'
+import ScoresListContainer from './ScoresListContainer'
+import GuessesListContainer from './GuessesListContainer'
 
-const mapStateToProps = (state) => {
-  return {
-    guesses: state.guesses,
-    scores: state.scores
-  }
-}
+const ResultsListContainer = () => (
+  <div>
+    <ScoresListContainer />
+    <GuessesListContainer />
+  </div>
+)
 
-export default connect(
-  mapStateToProps
-)(ResultsList)
+export default ResultsListContainer
