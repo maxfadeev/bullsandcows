@@ -112,7 +112,7 @@ export const guesserDeduceGuess = (choices) => {
   }
 }
 
-export const pressScoreButton = (typedDigits, turn) => {
+export const pressScoreButton = () => {
   return (dispatch, getState) => {
     if (getState().guesser.secret.length === 0) {
       dispatch(guesserThinkUpSecret())
@@ -130,7 +130,7 @@ export const pressScoreButton = (typedDigits, turn) => {
       )
       dispatch(
         appendGuesses(
-          typedDigits, 
+          getState().typedDigits, 
           getState().guesser.guess
         )
       )
@@ -144,7 +144,7 @@ export const pressScoreButton = (typedDigits, turn) => {
       )
       dispatch(
         appendScores(
-          typedDigits, 
+          getState().typedDigits, 
           getState().guesser.score
         )
       )
@@ -152,8 +152,8 @@ export const pressScoreButton = (typedDigits, turn) => {
 
     dispatch({
       type: PRESS_SCORE_BUTTON,
-      typedDigits,
-      turn
+      typedDigits: getState().typedDigits,
+      turn: getState().turn
     })
   }
 }
