@@ -29,8 +29,8 @@ const mapDispatchToProps = (dispatch) => {
     onClick: () => {
       dispatch(pressScoreButton())
     }
-  };
-};
+  }
+}
 
 export default connect(
   mapStateToProps,
