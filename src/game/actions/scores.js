@@ -1,6 +1,8 @@
-import generatorics from 'generatorics'
-import equals from 'array-equal'
-import shuffle from 'array-shuffle'
+import shuffle from 'shuffle-array'
+
+import permutations from '../api/permutations'
+import scoreCalc from '../api/scoreCalc'
+import choices from '../api/choices'
 
 import { 
   NUMERALS, 
@@ -19,40 +21,6 @@ import {
   PRESS_SCORE_BUTTON 
 } from '../constants/ActionTypes'
 
-function getPermutations(digits, size) {
-  let permutations = []
-
-  for (let p of generatorics.clone.permutation(digits, size)) {
-    if (p[0] !== 0) {
-      permutations.push(p)
-    }
-  }
-
-  return permutations
-}
-
-function scoreCalc(guess, secret) {
-  let bulls = 0
-  let cows = 0
-
-  for (let [g, c] of zip([guess, secret])) {
-    if (g === c) {
-      bulls += 1
-    }
-    else if (secret.includes(g)) {
-      cows += 1
-    }
-  }
-
-  return [bulls, cows]
-}
-
-function zip(arrays) {
-    return arrays[0].map(function (_, i) {
-        return arrays.map(function (array) {return array[i]})
-    })
-}
-
 export const appendScores = (player1, player2) => {
   return {
     type: APPEND_SCORES,
@@ -70,31 +38,16 @@ export const appendGuesses = (player1, player2) => {
 }
 
 export const guesserThinkUpSecret = () => {
-  const choices = shuffle(getPermutations(NUMERALS, GUESS_DIGITS_LENGTH))
   return {
     type: GUESSER_THINK_UP_SECRET,
-    secret: choices[0]
+    secret: shuffle.pick(permutations(NUMERALS, GUESS_DIGITS_LENGTH))
   }  
 }
 
 export const guesserDeriveChoices = (guesser) => {
-  let choices = []
-  
-  if (guesser.choices.length === 0) {
-    choices = shuffle(getPermutations(NUMERALS, GUESS_DIGITS_LENGTH))
-  }
-  else {
-    const answer = guesser.choices[0]
-    for (let c of guesser.choices) {
-      if (equals(scoreCalc(c, answer), guesser.rivalScore)) {
-        choices.push(c)
-      }
-    }
-  }
-
   return {
     type: GUESSER_DERIVE_CHOICES,
-    choices 
+    choices: choices(guesser.choices, guesser.choices[0], guesser.rivalScore) 
   }
 }
 
