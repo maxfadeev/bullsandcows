@@ -6,9 +6,7 @@ import choices from '../api/choices'
 
 import { 
   NUMERALS, 
-  GUESS_DIGITS_LENGTH, 
-  GUESS_TURN, 
-  SCORE_TURN
+  GUESS_DIGITS_LENGTH
 } from '../constants/Game'
 
 import { 
@@ -65,48 +63,49 @@ export const guesserDeduceGuess = (choices) => {
   }
 }
 
-export const pressScoreButton = () => {
+export const makeGuess = () => {
   return (dispatch, getState) => {
     if (getState().guesser.secret.length === 0) {
       dispatch(guesserThinkUpSecret())
     }
-    if (getState().turn === GUESS_TURN) {
-      dispatch(
-        guesserDeriveChoices(
-          getState().guesser
-        )
+    dispatch(
+      guesserDeriveChoices(
+        getState().guesser
       )
-      dispatch(
-        guesserDeduceGuess(
-          getState().guesser.choices
-        )
+    )
+    dispatch(
+      guesserDeduceGuess(
+        getState().guesser.choices
       )
-      dispatch(
-        appendGuesses(
-          getState().typedDigits, 
-          getState().guesser.guess
-        )
+    )
+    dispatch(
+      appendGuesses(
+        getState().typedDigits, 
+        getState().guesser.guess
       )
-    }
-    else if (getState().turn === SCORE_TURN) {
-      dispatch(
-        guesserCalculateScore(
-          getState().guesser.rivalGuess, 
-          getState().guesser.secret
-        )
-      )
-      dispatch(
-        appendScores(
-          getState().typedDigits, 
-          getState().guesser.score
-        )
-      )
-    }
+    )
+  }
+}
 
-    dispatch({
-      type: PRESS_SCORE_BUTTON,
-      typedDigits: getState().typedDigits,
-      turn: getState().turn
-    })
+export const calculateScore = () => {
+  return (dispatch, getState) => {
+    dispatch(
+      guesserCalculateScore(
+        getState().guesser.rivalGuess, 
+        getState().guesser.secret
+      )
+    )
+    dispatch(
+      appendScores(
+        getState().typedDigits, 
+        getState().guesser.score
+      )
+    )
+  }
+}
+
+export const pressScoreButton = () => {
+  return {
+    type: PRESS_SCORE_BUTTON
   }
 }

@@ -1,9 +1,8 @@
-import { PRESS_SCORE_BUTTON } from '../../constants/ActionTypes'
-import { SCORE_TURN } from '../../constants/Game'
+import { APPEND_SCORES } from '../../constants/ActionTypes'
 
 const rivalScore = (state = [], action) => {
-  if (action.type === PRESS_SCORE_BUTTON && action.turn === SCORE_TURN) {
-    return [...action.typedDigits]
+  if (action.type === APPEND_SCORES) {
+    return [...action.player1]
   }
 
   return state

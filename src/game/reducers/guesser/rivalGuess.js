@@ -1,9 +1,8 @@
-import { PRESS_SCORE_BUTTON } from '../../constants/ActionTypes'
-import { GUESS_TURN } from '../../constants/Game'
+import { APPEND_GUESSES } from '../../constants/ActionTypes'
 
 const rivalGuess = (state = [], action) => {
-  if (action.type === PRESS_SCORE_BUTTON && action.turn === GUESS_TURN) {
-    return [...action.typedDigits]
+  if (action.type === APPEND_GUESSES) {
+    return [...action.player1]
   }
 
   return state

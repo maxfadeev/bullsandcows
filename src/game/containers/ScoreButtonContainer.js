@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import ScoreButton from '../components/ScoreButton'
-import { pressScoreButton } from '../actions/scores'
+import { makeGuess, calculateScore, pressScoreButton } from '../actions/scores'
 import { 
   GUESS_TURN, 
   SCORE_TURN, 
@@ -11,6 +11,7 @@ import {
 
 const mapStateToProps = (state) => {
   return {
+    turn: state.turn,
     isScoreButtonAvailable: (      
       (
         state.turn === GUESS_TURN 
@@ -26,7 +27,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
+    onClick: (turn) => {
+      if (turn === GUESS_TURN) dispatch(makeGuess())
+      if (turn === SCORE_TURN) dispatch(calculateScore())
       dispatch(pressScoreButton())
     }
   }
