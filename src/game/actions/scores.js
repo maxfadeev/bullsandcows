@@ -9,7 +9,7 @@ import {
   GUESS_DIGITS_LENGTH, 
   GUESS_TURN, 
   SCORE_TURN
-} from '../constants/Main'
+} from '../constants/Game'
 
 import { 
   APPEND_SCORES,

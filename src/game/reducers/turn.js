@@ -1,4 +1,4 @@
-import { GUESS_TURN, SCORE_TURN } from '../constants/Main'
+import { GUESS_TURN, SCORE_TURN } from '../constants/Game'
 import { PRESS_SCORE_BUTTON } from '../constants/ActionTypes'
 
 const turn = (state = GUESS_TURN, action) => {

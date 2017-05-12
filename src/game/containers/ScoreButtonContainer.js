@@ -7,7 +7,7 @@ import {
   SCORE_TURN, 
   GUESS_DIGITS_LENGTH, 
   SCORE_DIGITS_LENGTH 
-} from '../constants/Main'
+} from '../constants/Game'
 
 const mapStateToProps = (state) => {
   return {
