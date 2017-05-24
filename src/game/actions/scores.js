@@ -42,10 +42,10 @@ export const guesserThinkUpSecret = () => {
   }  
 }
 
-export const guesserDeriveChoices = (guesser) => {
+export const guesserDeriveChoices = (prevChoices, score) => {
   return {
     type: GUESSER_DERIVE_CHOICES,
-    choices: choices(guesser.choices, guesser.choices[0], guesser.rivalScore) 
+    choices: choices(prevChoices, prevChoices[0], score) 
   }
 }
 
@@ -70,7 +70,8 @@ export const makeGuess = () => {
     }
     dispatch(
       guesserDeriveChoices(
-        getState().guesser
+        getState().guesser.choices,
+        getState().guesser.rivalScore
       )
     )
     dispatch(
