@@ -1,11 +1,15 @@
 import { GUESS_TURN, SCORE_TURN } from '../constants/Game'
-import { PRESS_SCORE_BUTTON } from '../constants/ActionTypes'
+import { ADD_GUESS, ADD_SCORE } from '../constants/ActionTypes'
 
 const turn = (state = GUESS_TURN, action) => {
-  if (action.type === PRESS_SCORE_BUTTON) {
-    return state === GUESS_TURN ? SCORE_TURN : GUESS_TURN
+  switch(action.type) {
+    case ADD_GUESS:
+      return SCORE_TURN
+    case ADD_SCORE:
+      return GUESS_TURN
+    default:
+      return state
   }
-  return state
 }
 
 export default turn

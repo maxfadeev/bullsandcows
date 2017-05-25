@@ -1,13 +1,13 @@
-import { APPEND_SCORES } from '../constants/ActionTypes'
+import { ADD_SCORE } from '../constants/ActionTypes'
 
 const scores = (state = [], action) => {
   switch (action.type) {
-    case APPEND_SCORES:
+    case ADD_SCORE:
       return [
         ...state,
         {
-          player1: action.player1,
-          player2: action.player2
+          player1: action.player1Score,
+          player2: action.player2Score
         }
       ]
     default:

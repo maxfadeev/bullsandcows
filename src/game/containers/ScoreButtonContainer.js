@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import ScoreButton from '../components/ScoreButton'
-import { makeGuess, calculateScore, pressScoreButton } from '../actions/scores'
+import { addGuess, addScore } from '../actions/scores'
 import { 
   GUESS_TURN, 
   SCORE_TURN, 
@@ -12,6 +12,9 @@ import {
 const mapStateToProps = (state) => {
   return {
     turn: state.turn,
+    // typed digits may be guess or score digits
+    player1TypedDigits: state.typedDigits,
+    player2TypedDigits: state.ai.typedDigits,
     isScoreButtonAvailable: (      
       (
         state.turn === GUESS_TURN 
@@ -27,10 +30,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (turn) => {
-      if (turn === GUESS_TURN) dispatch(makeGuess())
-      if (turn === SCORE_TURN) dispatch(calculateScore())
-      dispatch(pressScoreButton())
+    onClick: (turn, player1TypedDigits, player2TypedDigits) => {
+      if (turn === GUESS_TURN) dispatch(addGuess(player1TypedDigits, player2TypedDigits))
+      if (turn === SCORE_TURN) dispatch(addScore(player1TypedDigits, player2TypedDigits))  
     }
   }
 }

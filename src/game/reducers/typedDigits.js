@@ -1,7 +1,8 @@
 import { 
   PRESS_NUMERIC_BUTTON, 
   REMOVE_TYPED_DIGIT, 
-  PRESS_SCORE_BUTTON 
+  ADD_GUESS,
+  ADD_SCORE 
 } from '../constants/ActionTypes'
 
 const typedDigits = (state = [], action) => {
@@ -18,7 +19,8 @@ const typedDigits = (state = [], action) => {
       return state.filter((numeral) => {
         return numeral !== action.numeral
       })
-    case PRESS_SCORE_BUTTON:
+    case ADD_GUESS:
+    case ADD_SCORE:
       return []
     default:
       return state
