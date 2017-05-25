@@ -6,10 +6,10 @@ import scoreCalc from './scoreCalc'
 
 import { NUMERALS, GUESS_DIGITS_LENGTH } from '../constants/Game'
 
-export function getChoices(prevChoices = [], answer, score) {
+export function getChoices(prevChoices, answer, score) {
   let choices = []
   
-  if (prevChoices.length === 0) {
+  if (prevChoices === undefined) {
     choices = shuffle(permutations(NUMERALS, GUESS_DIGITS_LENGTH))
   }
   else {
