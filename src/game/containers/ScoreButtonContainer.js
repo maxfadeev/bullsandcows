@@ -5,8 +5,8 @@ import { addGuess, addScore } from '../actions/scores'
 import { 
   GUESS_TURN, 
   SCORE_TURN, 
-  GUESS_DIGITS_LENGTH, 
-  SCORE_DIGITS_LENGTH 
+  GUESS_LENGTH, 
+  SCORE_LENGTH 
 } from '../constants/Game'
 
 const mapStateToProps = (state) => {
@@ -18,11 +18,11 @@ const mapStateToProps = (state) => {
     isScoreButtonAvailable: (      
       (
         state.turn === GUESS_TURN 
-        && state.typedDigits.length === GUESS_DIGITS_LENGTH
+        && state.typedDigits.length === GUESS_LENGTH
       )
       || (
         state.turn === SCORE_TURN 
-        && state.typedDigits.length === SCORE_DIGITS_LENGTH
+        && state.typedDigits.length === SCORE_LENGTH
       )
     )
   }

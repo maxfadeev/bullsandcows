@@ -4,13 +4,13 @@ import shuffle from 'shuffle-array'
 import permutations from './permutations'
 import scoreCalc from './scoreCalc'
 
-import { NUMERALS, GUESS_DIGITS_LENGTH } from '../constants/Game'
+import { NUMERALS, GUESS_LENGTH } from '../constants/Game'
 
 export function getChoices(prevChoices, answer, score) {
   let choices = []
   
   if (prevChoices === undefined) {
-    choices = shuffle(permutations(NUMERALS, GUESS_DIGITS_LENGTH))
+    choices = shuffle(permutations(NUMERALS, GUESS_LENGTH))
   }
   else {
     for (let c of prevChoices) {
@@ -32,5 +32,5 @@ export function getGuess(choices) {
 }
 
 export function createSecret() {
-  return shuffle.pick(permutations(NUMERALS, GUESS_DIGITS_LENGTH))
+  return shuffle.pick(permutations(NUMERALS, GUESS_LENGTH))
 }
