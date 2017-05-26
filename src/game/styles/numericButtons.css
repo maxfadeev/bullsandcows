@@ -1,13 +1,42 @@
-#numeric-buttons {
-  float: left;
-  margin: 0 15px;
-  list-style-type: none;
-}
+@import url('https://fonts.googleapis.com/css?family=Baloo');
 
 #numeric-buttons li {
-  float: left;   
+  font-family: Baloo;
+  font-size: 32px;
+  list-style: none;
+  float: left;
+  margin: 30px 10px;
 }
 
-#numeric-buttons li a, #numeric-buttons li span {
-  padding: 5px;
+#numeric-buttons li a {
+  text-decoration: none;
+  color: #373737;
+  text-shadow: 0 1px 0 #333,
+               0 2px 0 #393939,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #111,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+#numeric-buttons li a:active {
+  text-shadow: 0 1px 0 #222,
+                0 1px 0 #292929,
+                0 2px 0 #bbb,
+                0 4px 1px rgba(0,0,0,.1),
+                0 0 3px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25);
+  line-height: 55px;
+}
+
+#numeric-buttons li a:focus {
+  outline: none;
 }
