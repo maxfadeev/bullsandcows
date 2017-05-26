@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo');
 
+#numeric-buttons {
+  width: 100%;
+  float: left;
+}
+
 #numeric-buttons li {
   font-family: Baloo;
   font-size: 32px;
