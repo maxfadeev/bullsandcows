@@ -9,7 +9,7 @@ const NumericButtonsList = ({
   turn, 
   onNumericButtonPress
 }) => (
-  <ul id="numeric-buttons">
+    <ul id="numeric-buttons" className="disable-select">
     {numerals.map((n) => 
       <li key={n}>
         <NumericButton 
