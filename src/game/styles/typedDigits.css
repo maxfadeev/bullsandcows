@@ -17,3 +17,8 @@
   padding: 5px;
   text-decoration: none;
 }
+
+#typed-digits li a:hover {
+  color: #ffa500;
+  text-decoration: underline;
+}
