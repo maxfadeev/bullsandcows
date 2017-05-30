@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/scoreButton.css'
 
 const ScoreButton = ({
   onClick, 
@@ -8,10 +9,11 @@ const ScoreButton = ({
   isScoreButtonAvailable
 }) => {
   if (isScoreButtonAvailable === false) {
-    return <span>Score</span>
+    return <span className="score-button-stub disable-select">Score</span>
   }
   return (
     <a href="#"
+      className="score-button disable-select"
       onClick={(e) => {
         e.preventDefault()
         onClick(turn, player1TypedDigits, player2TypedDigits)
