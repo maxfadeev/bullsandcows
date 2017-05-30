@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GUESS_TURN, SCORE_TURN } from '../constants/Game'
+import { GUESS_TURN } from '../constants/Game'
 
 import '../styles/scoreButton.css'
 
