@@ -1,0 +1,12 @@
+.messages {
+  font-family: Raleway;
+  font-size: 12px;
+  color: green;
+  display: block;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.messages b {
+  font-size: 13px;
+}
