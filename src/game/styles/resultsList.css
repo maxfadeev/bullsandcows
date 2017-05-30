@@ -1,0 +1,32 @@
+.results-list {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 50%;
+  list-style: none;
+}
+
+.results-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results-list ul li {
+  font-family: "Paytone One";
+  font-size: 15px;
+  padding: 5px;
+  border-bottom: 1px dotted #d9d9d9;
+}
+
+#results-container {
+  padding-top: 32px;
+  height: 100%;
+}
+
+#guesses-list {
+  text-align: left;
+}
+
+#scores-list {
+  text-align: right;
+}

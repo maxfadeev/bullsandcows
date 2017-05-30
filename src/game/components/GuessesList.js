@@ -1,9 +1,14 @@
 import React from 'react'
 
 const GuessesList = ({guesses}) => (
-  <ul>
+  <ul id="guesses-list" className="results-list">
     {guesses.map((g, key) =>
-      <li key={key}>{g.player1} | {g.player2}</li>
+      <li key={key}>
+        <ul>
+          <li>{g.player1}</li>
+          <li>{g.player2}</li>
+        </ul>
+      </li>
     )}
   </ul>
 )

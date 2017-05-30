@@ -1,9 +1,14 @@
 import React from 'react'
 
 const ScoresList = ({scores}) => (
-  <ul>
+  <ul id="scores-list" className="results-list">
     {scores.map((s, key) =>
-      <li key={key}>{s.player1} | {s.player2}</li>  
+      <li key={key}>
+        <ul>
+          <li>{s.player1}</li>
+          <li>{s.player2}</li>
+        </ul>
+      </li>  
     )}
   </ul>
 )
