@@ -1,0 +1,9 @@
+.score-numerals li {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.score-numerals li span {
+  margin: 0;
+  margin-left: 3px;
+}

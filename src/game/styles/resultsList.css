@@ -11,7 +11,7 @@
   padding: 0;
 }
 
-.results-list ul li {
+.results-list .score, .results-list .guess {
   font-family: "Paytone One";
   font-size: 15px;
   padding: 5px;

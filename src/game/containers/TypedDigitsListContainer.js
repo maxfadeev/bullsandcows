@@ -2,10 +2,12 @@ import { connect } from 'react-redux'
 
 import TypedDigitsList from '../components/TypedDigitsList'
 import { removeTypedDigit } from '../actions/numerals'
+import { SCORE_TURN } from '../constants/Game'
 
 const mapStateToProps = (state) => {
   return {
-    typedDigits: state.typedDigits
+    typedDigits: state.typedDigits,
+    isScoreTurn: state.turn === SCORE_TURN
   }
 }
 

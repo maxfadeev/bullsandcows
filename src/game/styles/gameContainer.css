@@ -20,3 +20,19 @@
   -ms-user-select: none;      
   user-select: none;
 }
+
+.green-icon, .orange-icon {
+  display: inline-block;
+  margin-bottom: 1px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.green-icon {
+  background-color: green;
+}
+
+.orange-icon {
+  background-color: orange;
+}

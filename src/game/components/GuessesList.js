@@ -5,8 +5,8 @@ const GuessesList = ({guesses}) => (
     {guesses.map((g, key) =>
       <li key={key}>
         <ul>
-          <li>{g.player1}</li>
-          <li>{g.player2}</li>
+          <li className="guess">{g.player1}</li>
+          <li className="guess">{g.player2}</li>
         </ul>
       </li>
     )}
