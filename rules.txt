@@ -1,0 +1,5 @@
+Guess rules:
+1. 0 can not be used as a first numeral of the guess
+2. Same numeral can not be used twice
+3. Quantity of numerals must be 4, not more, not less
+4. 
