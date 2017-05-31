@@ -1,7 +1,7 @@
 import React from 'react'
 
 const GuessesList = ({guesses}) => (
-  <ul id="guesses-list" className="results-list">
+  <ul id="guesses-list">
     {guesses.map((g, key) =>
       <li key={key}>
         <ul>

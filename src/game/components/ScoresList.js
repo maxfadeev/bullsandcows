@@ -3,7 +3,7 @@ import React from 'react'
 import ScoreNumerals from './ScoreNumerals'
 
 const ScoresList = ({scores}) => (
-  <ul id="scores-list" className="results-list">
+  <ul id="scores-list">
     {scores.map((s, key) =>
       <li key={key}>
         <ul>

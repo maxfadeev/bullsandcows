@@ -1,4 +1,4 @@
-.results-list {
+#guesses-list, #scores-list {
   margin: 0;
   padding: 0;
   float: left;
@@ -6,23 +6,23 @@
   list-style: none;
 }
 
-.results-list ul {
+#guesses-list ul, #scores-list ul {
   list-style: none;
   padding: 0;
 }
 
-.results-list .guess:first-child, .results-list .score:first-child {
+#guesses-list .guess:first-child, #scores-list .score:first-child {
   background-color: #efefef;
 }
 
-.results-list .score, .results-list .guess {
+#guesses-list .guess, #scores-list .score {
   font-family: "Paytone One";
   font-size: 15px;
   padding: 5px;
   border-bottom: 1px dotted #d9d9d9;
 }
 
-#results-container {
+#results-list {
   padding-top: 32px;
   height: 100%;
 }
