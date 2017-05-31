@@ -19,3 +19,7 @@
   font-family: "Paytone One";
   font-size: 14px;
 }
+
+.score-button + .error-message, .score-button-stub + .error-message {
+  padding-top: 21px;
+}
