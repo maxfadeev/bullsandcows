@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+.results-list .guess:first-child, .results-list .score:first-child {
+  background-color: #efefef;
+}
+
 .results-list .score, .results-list .guess {
   font-family: "Paytone One";
   font-size: 15px;
