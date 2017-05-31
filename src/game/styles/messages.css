@@ -1,4 +1,4 @@
-.messages {
+.success-message, .error-message {
   font-family: Raleway;
   font-size: 12px;
   color: green;
@@ -7,6 +7,15 @@
   padding-bottom: 22px;
 }
 
-.messages b {
-  font-size: 13px;
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+.success-message b {
+  font-family: "Paytone One";
+  font-size: 14px;
 }
