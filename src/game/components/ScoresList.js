@@ -7,8 +7,8 @@ const ScoresList = ({scores}) => (
     {scores.map((s, key) =>
       <li key={key}>
         <ul>
-          <li className="score"><ScoreNumerals numerals={s.player1} /></li>
           <li className="score"><ScoreNumerals numerals={s.player2} /></li>
+          <li className="score"><ScoreNumerals numerals={s.player1} /></li>
         </ul>
       </li>  
     )}
