@@ -6,9 +6,9 @@ import * as statuses from '../constants/Statuses'
 
 const mapStateToProps = (state) => {
   return {
-    guesses: state.guesses,
-    scores: state.scores,
-    isSuccess: state.ai.status === statuses.SUCCESS
+    guesses: state.game.guesses,
+    scores: state.game.scores,
+    isSuccess: state.game.ai.status === statuses.SUCCESS
   }
 }
 

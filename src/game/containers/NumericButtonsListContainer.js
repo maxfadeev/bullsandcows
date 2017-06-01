@@ -5,8 +5,8 @@ import { pressNumericButton } from '../actions/numerals'
 
 const mapStateToProps = (state) => {
   return {
-    typedDigits: state.typedDigits,
-    turn: state.turn
+    typedDigits: state.game.typedDigits,
+    turn: state.game.turn
   }
 }
 

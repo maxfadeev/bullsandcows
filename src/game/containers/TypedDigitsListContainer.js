@@ -6,8 +6,8 @@ import { SCORE_TURN } from '../constants/Game'
 
 const mapStateToProps = (state) => {
   return {
-    typedDigits: state.typedDigits,
-    isScoreTurn: state.turn === SCORE_TURN
+    typedDigits: state.game.typedDigits,
+    isScoreTurn: state.game.turn === SCORE_TURN
   }
 }
 

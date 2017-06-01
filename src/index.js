@@ -4,8 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import './index.css'
 
-// Collect all reducers here
-import reducer from './game/reducers'
+import reducer from './reducer'
 import GameContainer from './game/containers/GameContainer'
 
 ReactDOM.render(

@@ -11,18 +11,18 @@ import {
 
 const mapStateToProps = (state) => {
   return {
-    turn: state.turn,
+    turn: state.game.turn,
     // typed digits may be guess or score digits
-    player1TypedDigits: state.typedDigits,
-    player2TypedDigits: state.ai.typedDigits,
+    player1TypedDigits: state.game.typedDigits,
+    player2TypedDigits: state.game.ai.typedDigits,
     isScoreButtonAvailable: (      
       (
-        state.turn === GUESS_TURN 
-        && state.typedDigits.length === GUESS_LENGTH
+        state.game.turn === GUESS_TURN 
+        && state.game.typedDigits.length === GUESS_LENGTH
       )
       || (
-        state.turn === SCORE_TURN 
-        && state.typedDigits.length === SCORE_LENGTH
+        state.game.turn === SCORE_TURN 
+        && state.game.typedDigits.length === SCORE_LENGTH
       )
     )
   }
