@@ -1,0 +1,36 @@
+#guesses-list, #scores-list {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 50%;
+  list-style: none;
+}
+
+#guesses-list ul, #scores-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#guesses-list .guess:first-child, #scores-list .score:first-child {
+  background-color: #efefef;
+}
+
+#guesses-list .guess, #scores-list .score {
+  font-family: "Paytone One";
+  font-size: 15px;
+  padding: 5px;
+  border-bottom: 1px dotted #d9d9d9;
+}
+
+#results-list {
+  padding-top: 32px;
+  height: 100%;
+}
+
+#guesses-list {
+  text-align: left;
+}
+
+#scores-list {
+  text-align: right;
+}

@@ -1,0 +1,38 @@
+#game-container {
+  width: 192px;
+  height: 330px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.horizontal-line { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #fff, #ffa500, #fff);
+  background-image: -moz-linear-gradient(left, #fff, #ffa500, #fff);
+  background-image: -ms-linear-gradient(left, #fff, #ffa500, #fff);
+  background-image: -o-linear-gradient(left, #fff, #ffa500, #fff); 
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.green-icon, .orange-icon {
+  display: inline-block;
+  margin-bottom: 1px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.green-icon {
+  background-color: green;
+}
+
+.orange-icon {
+  background-color: orange;
+}
