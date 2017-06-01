@@ -1,0 +1,9 @@
+.nav {
+  list-style: none;
+  font-family: "Paytone One";
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffa500;
+}

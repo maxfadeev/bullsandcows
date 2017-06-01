@@ -3,11 +3,9 @@
   padding: 0;
   float: left;
   width: 50%;
-  list-style: none;
 }
 
 #guesses-list ul, #scores-list ul {
-  list-style: none;
   padding: 0;
 }
 
