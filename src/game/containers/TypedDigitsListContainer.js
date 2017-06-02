@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onRemoveTypedDigit: (numeral) => {
-      dispatch(removeTypedDigit(numeral))
+    onRemoveTypedDigit: (numeral, key) => {
+      dispatch(removeTypedDigit(numeral, key))
     }
   };
 };

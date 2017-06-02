@@ -3,3 +3,4 @@ export const GUESS_LENGTH = 4
 export const SCORE_LENGTH = 2
 export const GUESS_TURN = 'GUESS_TURN'
 export const SCORE_TURN = 'SCORE_TURN'
+export const SUB = '.'

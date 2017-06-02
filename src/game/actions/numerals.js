@@ -3,28 +3,33 @@ import {
   GUESS_TURN, 
   SCORE_TURN, 
   GUESS_LENGTH, 
-  SCORE_LENGTH 
+  SCORE_LENGTH,
+  SUB
 } from '../constants/Game'
 
 export const pressNumericButton = (numeral, typedDigits, turn) => {
   const isDigitAvailable = !(
     (
-      turn === GUESS_TURN 
+      turn === GUESS_TURN
       && (
-        (typedDigits.length === 0 && numeral === 0)
+        (typedDigits[0] === SUB && numeral === 0)
         || typedDigits.includes(numeral)
-        || typedDigits.length === GUESS_LENGTH
+        || !typedDigits.includes(SUB)
       )
     )
     || (
       turn === SCORE_TURN
       && (
         numeral > GUESS_LENGTH
-        || typedDigits.length === SCORE_LENGTH
         || (
-          typedDigits.length > 0
-          && typedDigits.reduce((a, b) => a + b, 0) + numeral > GUESS_LENGTH
+          typedDigits.includes(SUB)
+          && typedDigits.reduce(
+            (a, b) => b !== SUB ? a + b : a,
+            0
+          ) + numeral > GUESS_LENGTH
         )
+        || !typedDigits.includes(SUB)
+        || typedDigits.reduce((a, b) => a + b, 0) + numeral > GUESS_LENGTH
       )
     )
   )
@@ -36,9 +41,10 @@ export const pressNumericButton = (numeral, typedDigits, turn) => {
   }
 }
 
-export const removeTypedDigit = (numeral) => {
+export const removeTypedDigit = (numeral, key) => {
   return {
     type: REMOVE_TYPED_DIGIT,
-    numeral
+    numeral,
+    key
   }
 }

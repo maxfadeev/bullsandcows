@@ -1,8 +1,8 @@
 #typed-digits {
   width: 100%;
   height: 30px;
-  padding: 0;
   margin: 0;
+  padding-bottom: 13px;
   text-align: center;
 }
 
@@ -13,11 +13,9 @@
 }
 
 #typed-digits li a {
+  display: inline-block;
+  width: 10px;
   color: #000;
   padding: 5px;
   text-decoration: none;
-}
-
-#typed-digits li a:hover {
-  text-decoration: line-through;
 }
