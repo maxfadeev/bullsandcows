@@ -7,7 +7,7 @@ const TypedDigitsList = ({typedDigits, isScoreTurn, onRemoveTypedDigit}) => (
   <ul id="typed-digits" className="disable-select">
     {typedDigits.map((digit, key) => 
       <li key={key}>
-        <TypedDigit onClick={() => onRemoveTypedDigit(digit)}>
+        <TypedDigit onClick={() => onRemoveTypedDigit(digit, key)}>
           {digit}
         </TypedDigit>
         <span className={isScoreTurn ? (key === 0 ? 'green-icon' : 'orange-icon') : 'no-icon'}></span>

@@ -5,10 +5,22 @@ import {
   ADD_SCORE 
 } from '../constants/ActionTypes'
 
-const typedDigits = (state = [], action) => {
+import { SUB, GUESS_LENGTH, SCORE_LENGTH } from '../constants/Game'
+
+const typedDigits = (state = Array(GUESS_LENGTH).fill(SUB), action) => {
   switch (action.type) {
     case PRESS_NUMERIC_BUTTON:
       if (action.isDigitAvailable === true) {
+        if (state.includes(SUB)) {
+          let isEnaught = false
+          return state.map((numeral) => {
+            if (numeral === SUB && isEnaught === false) {
+              isEnaught = true
+              return action.numeral
+            }
+            return numeral
+          })
+        }
         return [
           ...state,
           action.numeral
@@ -16,12 +28,16 @@ const typedDigits = (state = [], action) => {
       }
       return state
     case REMOVE_TYPED_DIGIT:
-      return state.filter((numeral) => {
-        return numeral !== action.numeral
+      return state.map((numeral, key) => {
+        if (key === action.key) {
+          return SUB
+        }
+        return numeral
       })
     case ADD_GUESS:
+      return Array(SCORE_LENGTH).fill(SUB)  
     case ADD_SCORE:
-      return []
+      return Array(GUESS_LENGTH).fill(SUB)
     default:
       return state
   }

@@ -6,7 +6,8 @@ import {
   GUESS_TURN, 
   SCORE_TURN, 
   GUESS_LENGTH, 
-  SCORE_LENGTH 
+  SCORE_LENGTH,
+  SUB
 } from '../constants/Game'
 import * as status from '../constants/Status'
 
@@ -29,6 +30,7 @@ const mapStateToProps = (state) => {
           && state.game.typedDigits.length === SCORE_LENGTH
         )
       )
+      && !state.game.typedDigits.includes(SUB)
     )
   }
 }
