@@ -1,9 +1,16 @@
 .about img {
   border-radius: 50%;
+  animation: eMLfYp 1s forwards;
 }
 
 .about .image {
   text-align: center;
+  position: relative;
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 214px;
+  height: 212px;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .about a {
