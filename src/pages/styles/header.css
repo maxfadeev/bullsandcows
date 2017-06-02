@@ -1,0 +1,30 @@
+.nav {
+  list-style: none;
+  font-family: "Paytone One";
+  overflow: hidden;
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+  margin-top: 45px;
+}
+
+.nav ul {
+  margin: 0 auto;
+  max-width: 790px;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav a {
+  display: block;
+  padding: 25px 23px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.nav a:hover {
+  border-bottom: 5px solid #ffa500;
+  padding-bottom: 20px;
+}

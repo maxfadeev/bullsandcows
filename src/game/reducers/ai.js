@@ -1,5 +1,6 @@
 import { ADD_SCORE, ADD_GUESS } from '../constants/ActionTypes'
-import * as statuses from '../constants/Statuses' 
+import { GUESS_LENGTH } from '../constants/Game'
+import * as status from '../constants/Status' 
 
 import { createSecret, getChoices, getGuess, getScore } from '../api/ai'
 
@@ -9,17 +10,28 @@ function getDefaultState() {
     secret: createSecret(),
     choices,
     typedDigits: getGuess(choices),
-    status: statuses.SUCCESS
+    status: status.GAME_CONTINUES
   }
 }
 
 const ai = (state = getDefaultState(), action) => {
   switch (action.type) {
     case ADD_GUESS:
+      const score = getScore(action.player1Guess, state.secret)
+      if (score[0] === GUESS_LENGTH) {
+        return Object.assign({}, state, {
+          status: status.OPPONENT_WIN
+        })  
+      }
       return Object.assign({}, state, {
-        typedDigits: getScore(action.player1Guess, state.secret)
+        typedDigits: score
       })
     case ADD_SCORE:
+      if (action.player1Score[0] === GUESS_LENGTH) {
+        return Object.assign({}, state, {
+          status: status.OPPONENT_LOSE
+        })
+      }  
       const choices = getChoices(
         state.choices, 
         getGuess(state.choices), 
@@ -28,7 +40,7 @@ const ai = (state = getDefaultState(), action) => {
       if (choices.length === 0) {
         return Object.assign({}, state, {
           choices,
-          status: statuses.OPPONENT_MISTAKE
+          status: status.OPPONENT_MISTAKE
         })  
       }
       return Object.assign({}, state, {
