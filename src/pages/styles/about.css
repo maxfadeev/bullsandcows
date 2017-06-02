@@ -1,0 +1,11 @@
+.about img {
+  border-radius: 50%;
+}
+
+.about .image {
+  text-align: center;
+}
+
+.about a {
+  color: #ffa500
+}
