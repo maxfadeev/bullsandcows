@@ -2,8 +2,7 @@ import { PRESS_NUMERIC_BUTTON, REMOVE_TYPED_DIGIT} from '../constants/ActionType
 import { 
   GUESS_TURN, 
   SCORE_TURN, 
-  GUESS_LENGTH, 
-  SCORE_LENGTH,
+  GUESS_LENGTH,
   SUB
 } from '../constants/Game'
 
