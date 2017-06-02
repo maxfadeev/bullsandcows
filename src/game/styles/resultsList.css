@@ -22,7 +22,6 @@
 
 #results-list {
   padding-top: 32px;
-  height: 100%;
 }
 
 #guesses-list {
@@ -31,4 +30,13 @@
 
 #scores-list {
   text-align: right;
+}
+
+.award {
+  text-align: center;
+  padding-top: 27px;
+}
+
+.award span {
+  margin-top: 16px;
 }

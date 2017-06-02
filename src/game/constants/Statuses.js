@@ -1,2 +1,0 @@
-export const SUCCESS = 'SUCCESS'
-export const OPPONENT_MISTAKE = 'OPPONENT_MISTAKE'
