@@ -26,14 +26,14 @@ const ResultsList = ({guesses, scores, status}) => {
           <span className="success-message">Onfortunately, You lose. But don't give up and try again!</span>
         </div>
       )
+    default:
+      return (
+        <div id="results-list">
+          <GuessesList guesses={guesses} />
+          <ScoresList scores={scores} />
+        </div>
+      )  
   }
-
-  return (
-    <div id="results-list">
-      <GuessesList guesses={guesses} />
-      <ScoresList scores={scores} />
-    </div>
-  )
 }
 
 export default ResultsList
