@@ -3,7 +3,11 @@ import DocumentTitle from 'react-document-title'
 
 const About = () => (
   <DocumentTitle title="About">
-    <p>Hi, I'm Max Fadeev. I am a Developer specializing in Web technologies.</p>
+    <div>
+      <img src="" />
+      <p>Hi, I'm Max Fadeev. I am a Developer specializing in Web technologies.
+      I reaaly love my job and get inspired from the comutity more and more.</p>
+    </div>
   </DocumentTitle>
 )
 
