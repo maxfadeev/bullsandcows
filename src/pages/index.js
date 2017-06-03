@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom'
 
-import Navigation from './components/Navigation'
+import Header from './components/Header'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -16,7 +16,7 @@ import './styles/content.css'
 const Pages = () => (
   <Router>
     <div>
-      <Navigation />
+      <Header />
 
       <main className="content">
         <Route exact path="/" component={Home} />
