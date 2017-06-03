@@ -34,7 +34,7 @@
   margin-bottom: 35px;
 }
 
-.player-results ul {
+.player-results .guesses-list, .player-results .guesses-list {
   width: 50%;
   float: left;
 }

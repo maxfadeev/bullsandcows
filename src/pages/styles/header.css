@@ -1,9 +1,8 @@
 .header {
   margin-top: 45px;
   overflow: hidden;
-  border-bottom: 1px solid #efefef;
-  border-top: 1px solid #efefef;
   text-align: center;
+  background-color: black;
 }
 
 .header .icons {
@@ -14,6 +13,15 @@
 .header .icons li {
   float: left;
   margin: 0 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(252,251,247,.13);
+}
+
+header .icons img {
+  width: 24px;
+  height: 24px;
 }
 
 .nav {
@@ -34,11 +42,11 @@
   display: block;
   padding: 25px 23px;
   text-decoration: none;
-  color: #333;
+  color: white;
   font-size: 18px;
 }
 
 .nav a:hover {
-  border-bottom: 5px solid #ffa500;
-  padding-bottom: 20px;
+  border-bottom: 7px solid white;
+  padding-bottom: 18px;
 }

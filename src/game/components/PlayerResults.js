@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ScoreNumerals from './ScoreNumerals'
+
 const PlayerResults = ({ guesses, scores }) => (
   <div className="player-results">
     <ul className="guesses-list">
@@ -9,7 +11,7 @@ const PlayerResults = ({ guesses, scores }) => (
     </ul>
     <ul className="scores-list">
       {scores.map((s, key) =>
-        <li key={key} className="score">{s}</li>
+        <li key={key} className="score"><ScoreNumerals numerals={s} /></li>
       )}
     </ul>
   </div>
