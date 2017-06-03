@@ -6,7 +6,7 @@ import '../styles/home.css'
 const Home = () => (
   <DocumentTitle title="Max Fadeev">
     <div className="home">
-      <p>Welcome!</p>
+      <h2>Welcome!</h2>
       <p>My name is Max Fadeev. I am a Developer. Read a little bit more about
         me <Link to="/about">here</Link>.</p>
       <p>Fill free to <Link to="/contact">contact</Link> me.</p>

@@ -1,19 +1,15 @@
-#guesses-list, #scores-list {
+.guesses-list, .scores-list {
   margin: 0;
   padding: 0;
   float: left;
   width: 50%;
-}
+} 
 
-#guesses-list ul, #scores-list ul {
-  padding: 0;
-}
-
-#guesses-list .guess:first-child, #scores-list .score:first-child {
+.guesses-list .guess:nth-child(2n+1), .scores-list .score:nth-child(2n+1) {
   background-color: #efefef;
 }
 
-#guesses-list .guess, #scores-list .score {
+.guesses-list .guess, .scores-list .score {
   font-family: "Paytone One";
   font-size: 15px;
   padding: 5px;
@@ -24,12 +20,23 @@
   padding-top: 32px;
 }
 
-#guesses-list {
+.guesses-list {
   text-align: left;
 }
 
-#scores-list {
+.scores-list {
   text-align: right;
+}
+
+.player-results {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.player-results ul {
+  width: 50%;
+  float: left;
 }
 
 .award {

@@ -1,15 +1,19 @@
 import { ADD_GUESS } from '../constants/ActionTypes'
 
-const guesses = (state = [], action) => {
+function getDefaultState() {
+  return {
+    player1: [],
+    player2: []
+  }
+}
+
+const guesses = (state = getDefaultState(), action) => {
   switch (action.type) {
     case ADD_GUESS:
-      return [
-        ...state,
-        {
-          player1: action.player1Guess,
-          player2: action.player2Guess
-        }
-      ]
+      return {
+        player1: [...state.player1, action.player1],
+        player2: [...state.player2, action.player2],
+      }
     default:
       return state
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 
-import GuessesList from './GuessesList'
-import ScoresList from './ScoresList'
+import PlayerResults from './PlayerResults'
 import Message from './Message'
 
 import { OPPONENT_MISTAKE, OPPONENT_WIN, OPPONENT_LOSE } from '../constants/Status'
@@ -29,8 +28,8 @@ const ResultsList = ({guesses, scores, status}) => {
     default:
       return (
         <div id="results-list">
-          <GuessesList guesses={guesses} />
-          <ScoresList scores={scores} />
+          <PlayerResults guesses={guesses.player1} scores={scores.player2} />
+          <PlayerResults guesses={guesses.player2} scores={scores.player1} />
         </div>
       )  
   }
