@@ -17,7 +17,7 @@ function getDefaultState() {
 const ai = (state = getDefaultState(), action) => {
   switch (action.type) {
     case ADD_GUESS:
-      const score = getScore(action.player1Guess, state.secret)
+      const score = getScore(action.player1, state.secret)
       if (score[0] === GUESS_LENGTH) {
         return Object.assign({}, state, {
           status: status.OPPONENT_WIN
@@ -27,7 +27,7 @@ const ai = (state = getDefaultState(), action) => {
         typedDigits: score
       })
     case ADD_SCORE:
-      if (action.player1Score[0] === GUESS_LENGTH) {
+      if (action.player1[0] === GUESS_LENGTH) {
         return Object.assign({}, state, {
           status: status.OPPONENT_LOSE
         })
@@ -35,7 +35,7 @@ const ai = (state = getDefaultState(), action) => {
       const choices = getChoices(
         state.choices, 
         getGuess(state.choices), 
-        action.player1Score
+        action.player1
       ) 
       if (choices.length === 0) {
         return Object.assign({}, state, {

@@ -3,18 +3,18 @@ import {
   ADD_GUESS 
 } from '../constants/ActionTypes'
 
-export const addScore = (player1Score, player2Score) => {
+export const addScore = (player1, player2) => {
   return {
     type: ADD_SCORE,
-    player1Score,
-    player2Score
+    player1,
+    player2
   }
 }
 
-export const addGuess = (player1Guess, player2Guess) => {
+export const addGuess = (player1, player2) => {
   return {
     type: ADD_GUESS,
-    player1Guess,
-    player2Guess
+    player1,
+    player2
   }
 }
