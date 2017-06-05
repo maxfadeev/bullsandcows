@@ -15,7 +15,7 @@ const About = () => (
       that requires an ability to think and make decisions faster than you can say Jack Robinson.</p>
       <p>By the way, in case you are a bit tired and want to get some rest, you can play
         a little <Link to="/game">game</Link> of my childhood 
-        called <Link to="https://en.wikipedia.org/wiki/Bulls_and_Cows" target="_blank">"Bulls and Cows"</Link>
+        called <Link to="https://en.wikipedia.org/wiki/Bulls_and_Cows" target="_blank" rel="noopener">"Bulls and Cows"</Link>
         (We used to call it "Numbers").
       </p>
       <p>In any case, fill free to <Link to="/contact">contact</Link> me.</p>

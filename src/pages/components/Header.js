@@ -10,11 +10,11 @@ const Header = () => (
     <Navigation />
     <ul className="icons">
       <li>
-        <Link to="https://github.com/maxfadeev" target="_blank">
+        <Link to="https://github.com/maxfadeev" target="_blank" rel="noopener">
           <img src="/img/github.svg" alt="github" />
         </Link></li>
       <li>
-        <Link to="https://twitter.com/_maxfadeev" target="_blank">
+        <Link to="https://twitter.com/_maxfadeev" target="_blank" rel="noopener">
           <img src="/img/twitter.svg" alt="twitter" />  
         </Link>
       </li>
