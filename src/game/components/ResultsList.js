@@ -15,14 +15,14 @@ const ResultsList = ({guesses, scores, status}) => {
       return (
         <div className="award">
           <img src="/img/trophy.png" alt="award" />
-          <span className="success-message">Congratulations, You win!</span>
+          <Message type="success">Congratulations, You win!</Message>
         </div> 
       ) 
     case OPPONENT_LOSE:  
       return (
         <div className="award">
           <img src="/img/game-over.png" alt="award" />
-          <span className="success-message">Onfortunately, You lose. But don't give up and try again!</span>
+          <Message type="success">Onfortunately, You lose. But don't give up and try again!</Message>
         </div>
       )
     default:
