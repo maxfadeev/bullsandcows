@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import Navigation from './Navigation'
 
+import '../styles/header.css'
+
 const Header = () => (
   <header className="header">
     <Navigation />

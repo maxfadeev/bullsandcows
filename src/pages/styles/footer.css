@@ -1,0 +1,30 @@
+.footer .icons {
+  width: 72px;
+  height: 40px;
+  margin: 12px auto;
+}
+
+.footer .icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer .icons li {
+  float: left;
+  margin: 0 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(252,251,247,.13);
+}
+
+.footer {
+  margin-top: 45px;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Paytone One";
+}
+
+#game-container + .footer {
+  display: none;
+}
