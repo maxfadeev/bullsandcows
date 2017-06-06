@@ -29,7 +29,6 @@ const ResultsList = ({guesses, scores, status}) => {
       return (
         <div id="results-list">
           <PlayerResults guesses={guesses.player1} scores={scores.player2} />
-          <PlayerResults guesses={guesses.player2} scores={scores.player1} />
         </div>
       )  
   }
