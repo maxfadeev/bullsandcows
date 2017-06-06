@@ -4,7 +4,7 @@ import '../styles/footer.css'
 
 const Footer = () => (
   <footer className="footer">
-    <span class="footer-copyright">© {new Date().getFullYear()} - Max Fadeev</span>  
+    <span className="footer-copyright">© {new Date().getFullYear()} - Max Fadeev</span>  
     <ul className="icons">
       <li>
         <Link to="https://github.com/maxfadeev" target="_blank" rel="noopener">
