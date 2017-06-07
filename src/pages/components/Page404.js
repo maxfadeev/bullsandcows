@@ -1,6 +1,5 @@
 import React from 'react'
 import DocumentTitle from 'react-document-title'
-import { Link } from 'react-router-dom'
 import '../styles/page404.css'
 
 const Page404 = () => (

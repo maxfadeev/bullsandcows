@@ -18,7 +18,7 @@ import './styles/content.css'
 const Pages = () => (
   <Router>
     <div>
-      <Route exact path="(/|/about|/game|/contact)" component={Header} />
+      <Header />
       <main className="content">
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,7 +27,7 @@ const Pages = () => (
           <Route path="/contact" component={Contact} />
           <Route component={Page404} />
         </Switch>
-        <Footer />
+        <Route exact path="/(about|contact)?" component={Footer} />
       </main>
     </div>
   </Router>
