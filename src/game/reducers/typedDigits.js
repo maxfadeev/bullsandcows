@@ -12,10 +12,10 @@ const typedDigits = (state = Array(GUESS_LENGTH).fill(SUB), action) => {
     case PRESS_NUMERIC_BUTTON:
       if (action.isDigitAvailable === true) {
         if (state.includes(SUB)) {
-          let isEnaught = false
+          let isEnought = false
           return state.map((numeral) => {
-            if (numeral === SUB && isEnaught === false) {
-              isEnaught = true
+            if (numeral === SUB && isEnought === false) {
+              isEnought = true
               return action.numeral
             }
             return numeral
