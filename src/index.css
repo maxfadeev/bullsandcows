@@ -12,3 +12,13 @@ ul {
 img {
   max-width: 100%
 }
+
+@font-face {
+  font-family: 'Paytone One';
+  src: url('./pages/fonts/paytone-one.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./pages/fonts/raleway.woff2') format('woff2')
+}
