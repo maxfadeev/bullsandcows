@@ -13,3 +13,14 @@
   font-weight: bold;
   padding-left: 25px;
 }
+
+.game-rules a {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  color: black;
+}
+
+.game-rules .hidden {
+  display: none;
+}
