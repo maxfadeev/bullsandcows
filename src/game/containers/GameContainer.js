@@ -5,6 +5,7 @@ import ScoreButtonContainer from './ScoreButtonContainer'
 import ResultsListContainer from './ResultsListContainer'
 import TypedDigitsListContainer from './TypedDigitsListContainer'
 import GameInfoContainer from './GameInfoContainer'
+import GameRulesContainer from './GameRulesContainer'
 import '../styles/gameContainer.css'
 
 const GameContainer = () => (
@@ -15,6 +16,7 @@ const GameContainer = () => (
     <GameInfoContainer />
     <ScoreButtonContainer />
     <ResultsListContainer />
+    <GameRulesContainer />
   </div>
 )
 

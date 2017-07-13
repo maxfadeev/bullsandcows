@@ -1,0 +1,26 @@
+.game-rules {
+  position: absolute;
+  top: 173px;
+  left: 50%;
+  width: 360px;
+  margin-left: -530px;
+  font-family: Raleway;
+  font-size: 13px;
+}
+
+.game-rules ul {
+  list-style: disc;
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+.game-rules a {
+  width: 45px;
+  display: block;
+  margin: 0 auto;
+  color: black;
+}
+
+.game-rules .hidden {
+  display: none;
+}
