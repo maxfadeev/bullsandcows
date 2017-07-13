@@ -1,0 +1,15 @@
+.game-rules {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  width: 360px;
+  margin-left: -530px;
+  font-family: Raleway;
+  font-size: 13px;
+}
+
+.game-rules ul {
+  list-style: disc;
+  font-weight: bold;
+  padding-left: 25px;
+}
