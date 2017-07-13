@@ -5,6 +5,7 @@
   display: block;
   text-align: center;
   padding-bottom: 22px;
+  height: 38px;
 }
 
 .success-message {
@@ -17,7 +18,12 @@
 
 .success-message b {
   font-family: "Paytone One";
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.success-message p {
+  margin: 0;
 }
 
 .score-button + .error-message, .score-button-stub + .error-message {
