@@ -16,7 +16,7 @@ const ScoreButton = ({
     return <span className="score-button-stub disable-select">{text}</span>
   }
   return (
-    <a href="#"
+    <a href=""
       className="score-button disable-select"
       onClick={(e) => {
         e.preventDefault()

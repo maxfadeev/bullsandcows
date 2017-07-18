@@ -2,7 +2,7 @@ import React from 'react'
 
 const NumericButton = ({onClick, children}) => {
   return (
-    <a href="#"
+    <a href=""
       onClick={(e) => {
         e.preventDefault()
         onClick() 
