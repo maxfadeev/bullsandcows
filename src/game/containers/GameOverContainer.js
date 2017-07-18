@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 
-import ResultsList from '../components/ResultsList'
+import GameOver from '../components/GameOver'
 
 const mapStateToProps = (state) => {
   return {
-    guesses: state.game.guesses,
-    scores: state.game.scores
+    status: state.game.status,
   }
 }
 
 export default connect(
   mapStateToProps
-)(ResultsList)
+)(GameOver)

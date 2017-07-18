@@ -9,7 +9,6 @@ import {
   SCORE_LENGTH,
   SUB
 } from '../constants/Game'
-import * as status from '../constants/Status'
 
 const mapStateToProps = (state) => {
   return {
@@ -17,9 +16,7 @@ const mapStateToProps = (state) => {
     // typed digits may be guess or score digits
     player1TypedDigits: state.game.typedDigits,
     player2TypedDigits: state.game.ai.typedDigits,
-    isScoreButtonAvailable: ( 
-      state.game.ai.status === status.GAME_CONTINUES
-      &&  
+    isScoreButtonAvailable: (   
       (
         (
           state.game.turn === GUESS_TURN
