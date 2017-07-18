@@ -1,0 +1,4 @@
+export const GAME_CONTINUES = 'GAME_CONTINUES'
+export const PLAYER1_MISTAKE = 'PLAYER1_MISTAKE'
+export const PLAYER1_WIN = 'PLAYER1_WIN'
+export const PLAYER1_LOSE = 'PLAYER1_LOSE'

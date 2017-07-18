@@ -4,7 +4,7 @@ import '../styles/gameRules.css'
 
 const GameRules = ({onClick, isTextVissible, visibilityLinkText}) => (
   <div className="game-rules">
-    <a href="#"
+    <a href=""
       onClick={(e) => {
         e.preventDefault()
         onClick()
