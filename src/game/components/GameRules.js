@@ -10,7 +10,7 @@ const GameRules = ({onClick, isTextVissible, visibilityLinkText}) => (
         onClick()
       }}
     >
-      {visibilityLinkText}
+      {visibilityLinkText + ' rules'}
     </a>
     <div className={isTextVissible ? 'visible' : 'hidden'}>
       <p>Bulls and Cows is an old, numerical version of code-breaking game for two players.</p>
