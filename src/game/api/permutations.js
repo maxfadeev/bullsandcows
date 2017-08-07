@@ -1,16 +1,9 @@
-import generatorics from 'generatorics'
+import combinatorics from 'js-combinatorics'
 
 const permutations = (digits, size) => {
-  let pm = []
-
-  for (let p of generatorics.clone.permutation(digits, size)) {
-    // discard if the firs digit equals 0
-    if (p[0] !== 0) {
-      pm.push(p)
-    }
-  }
-
-  return pm
+  return combinatorics.permutation(digits, size).filter(pm => {
+    return pm[0] !== 0
+  })
 }
 
 export default permutations
