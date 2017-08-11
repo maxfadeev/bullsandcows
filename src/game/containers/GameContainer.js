@@ -13,7 +13,7 @@ import GameRulesContainer from './GameRulesContainer'
 import GameOverContainer from './GameOverContainer'
 import '../styles/gameContainer.css'
 
-const GameContainer = ({status}) => {
+const GameContainer = ({ status }) => {
   let content = (
     <div>
       <NumericButtonsListContainer numerals={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
@@ -31,21 +31,15 @@ const GameContainer = ({status}) => {
       </div>
     )
   }
-  
+
   return (
     <div id="game-container">
       {content}
       <GameRulesContainer />
     </div>
-  )  
+  )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    status: state.game.status
-  }
-}
+const mapStateToProps = ({ game: { status } }) => ({ status })
 
-export default connect(
-  mapStateToProps
-)(GameContainer)
+export default connect(mapStateToProps)(GameContainer)

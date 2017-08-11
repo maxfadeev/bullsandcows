@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 import NumericButtonsList from '../components/NumericButtonsList'
 import { pressNumericButton } from '../actions/numerals'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ game: { typedDigits, turn } }) => {
   return {
-    typedDigits: state.game.typedDigits,
-    turn: state.game.turn
+    typedDigits,
+    turn
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     onNumericButtonPress: (numeral, typedDigits, turn) => {
       dispatch(pressNumericButton(numeral, typedDigits, turn))
@@ -18,7 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NumericButtonsList)
+export default connect(mapStateToProps, mapDispatchToProps)(NumericButtonsList)

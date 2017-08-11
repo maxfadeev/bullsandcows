@@ -4,22 +4,19 @@ import TypedDigitsList from '../components/TypedDigitsList'
 import { removeTypedDigit } from '../actions/numerals'
 import { SCORE_TURN } from '../constants/Game'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ game: { typedDigits, turn } }) => {
   return {
-    typedDigits: state.game.typedDigits,
-    isScoreTurn: state.game.turn === SCORE_TURN
+    typedDigits,
+    isScoreTurn: turn === SCORE_TURN
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     onRemoveTypedDigit: (numeral, key) => {
       dispatch(removeTypedDigit(numeral, key))
     }
-  };
-};
+  }
+}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TypedDigitsList)
+export default connect(mapStateToProps, mapDispatchToProps)(TypedDigitsList)

@@ -3,15 +3,12 @@ import { connect } from 'react-redux'
 import GameRules from '../components/GameRules'
 import { toggleRulesVisibility } from '../actions/game'
 
-const mapStateToProps = (state) => {
-  const isTextVissible = state.game.rulesVisibility
-  return {
-    visibilityLinkText: isTextVissible ? 'Hide' : 'Show',
-    isTextVissible
-  }
-}
+const mapStateToProps = ({ game: { rulesVisibility: isTextVissible } }) => ({
+  visibilityLinkText: isTextVissible ? 'Hide' : 'Show',
+  isTextVissible
+})
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     onClick() {
       dispatch(toggleRulesVisibility())
@@ -19,7 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(GameRules)
+export default connect(mapStateToProps, mapDispatchToProps)(GameRules)
