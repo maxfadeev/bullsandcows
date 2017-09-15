@@ -8,11 +8,10 @@ import { NUMERALS, GUESS_LENGTH } from '../constants/Game'
 
 export function getChoices(prevChoices, answer, score) {
   let choices = []
-  
-  if (prevChoices === undefined) {
+
+  if (prevChoices === undefined || prevChoices === null) {
     choices = shuffle(permutations(NUMERALS, GUESS_LENGTH))
-  }
-  else {
+  } else {
     for (let c of prevChoices) {
       if (equals(scoreCalc(c, answer), score)) {
         choices.push(c)
