@@ -16,26 +16,29 @@ const ai = (state = getDefaultState(), action) => {
     case ADD_GUESS:
       const score = getScore(action.player1, state.secret)
 
-      return Object.assign({}, state, {
+      return {
+        ...state,
         typedDigits: score
-      })
+      }
     case ADD_SCORE:
       const choices = getChoices(
-        state.choices, 
-        getGuess(state.choices), 
+        state.choices,
+        getGuess(state.choices),
         action.player1
-      ) 
+      )
       if (choices.length === 0) {
-        return Object.assign({}, state, {
+        return {
+          ...state,
           choices: [],
           typedDigits: []
-        })  
+        }
       }
 
-      return Object.assign({}, state, {
+      return {
+        ...state,
         choices,
         typedDigits: getGuess(choices)
-      })
+      }
     default:
       return state
   }
