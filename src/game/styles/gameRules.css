@@ -1,9 +1,10 @@
 .game-rules {
   position: absolute;
   top: 173px;
-  right: 50%;
+  left: 50%;
   width: 360px;
-  margin-right: -518px;
+  margin-left: 166px;
+  padding-right: 10px;
   font-family: Raleway;
   font-size: 13px;
 }
