@@ -1,12 +1,11 @@
 .game-rules {
   position: absolute;
-  top: 173px;
-  left: 50%;
+  top: 158px;
+  margin-left: -70px;
   width: 360px;
-  margin-left: 166px;
-  padding-right: 10px;
   font-family: Raleway;
   font-size: 13px;
+  background-color: white;
 }
 
 .game-rules ul {
@@ -17,6 +16,9 @@
 
 .game-rules a {
   width: 100%;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
   text-align: right;
   display: block;
   color: black;
