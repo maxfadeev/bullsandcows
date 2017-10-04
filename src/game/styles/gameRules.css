@@ -27,3 +27,7 @@
 .game-rules .hidden {
   display: none;
 }
+
+.game-rules .visible {
+  height: 333px;
+}
