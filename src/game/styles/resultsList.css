@@ -1,16 +1,19 @@
-.guesses-list, .scores-list {
+.guesses-list,
+.scores-list {
   margin: 0;
   padding: 0;
   float: left;
   width: 50%;
-} 
+}
 
-.guesses-list .guess:nth-child(2n+1), .scores-list .score:nth-child(2n+1) {
+.guesses-list .guess:nth-child(2n + 1),
+.scores-list .score:nth-child(2n + 1) {
   background-color: #efefef;
 }
 
-.guesses-list .guess, .scores-list .score {
-  font-family: "Paytone One";
+.guesses-list .guess,
+.scores-list .score {
+  font-family: 'Paytone One';
   font-size: 15px;
   padding: 5px;
   border-bottom: 1px dotted #d9d9d9;
@@ -34,7 +37,8 @@
   margin-bottom: 35px;
 }
 
-.player-results .guesses-list, .player-results .guesses-list {
+.player-results .guesses-list,
+.player-results .guesses-list {
   width: 50%;
   float: left;
 }

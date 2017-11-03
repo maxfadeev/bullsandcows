@@ -2,9 +2,10 @@ import { connect } from 'react-redux'
 
 import ResultsList from '../components/ResultsList'
 
-const mapStateToProps = ({ game: { guesses, scores } }) => ({
+const mapStateToProps = ({ game: { guesses, scores, rulesVisibility } }) => ({
   guesses,
-  scores
+  scores,
+  rulesVisibility
 })
 
 export default connect(mapStateToProps)(ResultsList)

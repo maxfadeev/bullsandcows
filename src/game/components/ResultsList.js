@@ -4,10 +4,20 @@ import PlayerResults from './PlayerResults'
 
 import '../styles/resultsList.css'
 
-const ResultsList = ({guesses, scores, isOnlyPlayer1 = true}) => (
-  <div id="results-list">
+const ResultsList = ({
+  guesses,
+  scores,
+  rulesVisibility,
+  isOnlyPlayer1 = true
+}) => (
+  <div
+    id="results-list"
+    className={rulesVisibility === true ? 'hidden' : 'visible'}
+  >
     <PlayerResults guesses={guesses.player1} scores={scores.player2} />
-    {isOnlyPlayer1 ? '' : (
+    {isOnlyPlayer1 ? (
+      ''
+    ) : (
       <PlayerResults guesses={guesses.player2} scores={scores.player1} />
     )}
   </div>
